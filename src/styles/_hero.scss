@@ -1,0 +1,106 @@
+@use 'variaveis';
+
+.hero {
+    background-image: url(../midia/images/background-2.gif);
+    background-repeat: repeat;
+    background-size: 10%;
+    animation: moveBackground 10s linear infinite;
+    position: relative;
+    padding-bottom: 64px;
+
+    .container {
+        position: relative;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: variaveis.$corDoFundo;
+        content: '';
+        opacity: .7;
+    }
+
+    &__title {
+        margin-top: 64px;
+        background-color: variaveis.$corDoFundo;
+        color: variaveis.$corDoTextoHero;
+        font: bold 200% Deltarune, monospace;
+        padding: 10px;
+        border: 20px solid transparent;
+        border-radius: 10px;
+        border-image: url(../midia/images/borda.png) 25 / 30px / 10px;
+    }
+
+    &__subtitle{
+        font-size: 12px;
+        text-align: center;
+    }
+
+    &__contador {
+        margin-top: 12px;
+        display: block;
+        background-color: variaveis.$corDoFundo;
+        border: 2px solid variaveis.$corDoTextoHero;
+
+        &__texto {
+            font: bold 100% Deltarune, monospace;
+            text-align: center;
+            color: variaveis.$corDoTextoHero;
+
+
+            span {
+                font-size: 64px;
+            }
+        }
+    }
+
+
+    &__image {
+        max-height: 320px;
+        max-width: 340px;
+        padding-top: 12px;
+        margin: 0 auto;
+        display: block;
+
+    }
+
+
+    @media (max-width: 640px) {
+        background-size: 15%;
+
+        &__image {
+            max-height: 10%;
+        }
+
+        &__title {
+            margin: 24px auto;
+            font-size: 12px;
+            padding: 0;
+            border: 10px solid transparent;
+            border-image: url(../midia/images/borda.png) 30 / 22px / 10px;
+        }
+
+        &__contador {
+            font-size: 12px;
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+    }
+
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
