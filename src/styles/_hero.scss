@@ -34,7 +34,7 @@
         border-image: url(../midia/images/borda.png) 25 / 30px / 10px;
     }
 
-    &__subtitle{
+    &__subtitle {
         font-size: 12px;
         text-align: center;
     }
@@ -45,10 +45,12 @@
         background-color: variaveis.$corDoFundo;
         border: 2px solid variaveis.$corDoTextoHero;
 
+
         &__texto {
             font: bold 100% Deltarune, monospace;
             text-align: center;
             color: variaveis.$corDoTextoHero;
+            background-image: url(../midia/images/confetti.gif);
 
 
             span {
